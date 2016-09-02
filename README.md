@@ -1,4 +1,27 @@
-Symfony Standard Edition
+EIGENE EXPERIMENTE
+======
+02. September 2016
+------------------
+Beschreibung "Einbinden von MongoDB":
+* http://symfony.com/doc/current/bundles/DoctrineMongoDBBundle/index.html
+
+  mongodb-win32-x86_64-2008plus-ssl-2.7.8-signed.msi
+
+Die Extension für PHP donwloaden:
+* https://docs.mongodb.com/ecosystem/drivers/php/
+* http://pecl.php.net/package/mongodb
+
+  php_mongo-1.6.14-5.6-ts-vc11-x86
+
+Problem: ext-mongo wird nicht erkannt
+http://php.net/manual/de/set.mongodb.php
+CLI?:
+https://stackoverflow.com/questions/37345701/symfony3-mongodb-configurtion
+==> Ursache: per "php --ini" herausgefunden. wamp verwendet apache/php.ini oder so. 
+  
+
+
+Basis: Symfony Standard Edition
 ========================
 
 Welcome to the Symfony Standard Edition - a fully-functional Symfony
