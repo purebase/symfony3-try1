@@ -1,5 +1,27 @@
-EIGENE EXPERIMENTE
+TAGEBUCH
 ======
+
+NEXT:
+Upload und form ...
+http://symfony.com/doc/current/controller/upload_file.html
+
+
+
+
+
+Die dynamische Erstellung Erstellung von Forms wird in dem Tutorial ...
+http://symfony.com/doc/current/bundles/DoctrineMongoDBBundle/form.html
+... in Bezug auf den Type scheinbar falsch erklärt, denn sowohl ...
+http://stackoverflow.com/questions/34658833/hello-expected-argument-of-type-string-bundle-frontbundle-form-type-prestati
+... wie auch die original Dokumentation ...
+http://symfony.com/doc/current/forms.html
+... gehen anderes vor. Übergeben keine Instanz, sondern den Klassennamen. 
+
+http://api.symfony.com/2.7/Symfony/Bundle/FrameworkBundle/Controller/Controller.html
+
+TODO http://symfony.com/doc/current/bundles/DoctrineMongoDBBundle/config.html
+
+
 02. September 2016
 ------------------
 Beschreibung "Einbinden von MongoDB":
@@ -19,6 +41,10 @@ CLI?:
 https://stackoverflow.com/questions/37345701/symfony3-mongodb-configurtion
 ==> Ursache: per "php --ini" herausgefunden. wamp verwendet apache/php.ini oder so. 
   
+**01. September 2016:**
+http://symfony.com/doc/current/routing/requirements.html
+http://symfony.com/doc/current/controller.html
+http://symfony.com/doc/current/setup.html
 
 
 Basis: Symfony Standard Edition
