@@ -1,0 +1,16 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+<h1>Your, {{ callFromName }}, lucky number is {{ number }}, born in year {{ year }}. You searched?: {{ search }}</h1>
+<p>base url is: {{ app.request.schemeAndHttpHost ~ app.request.baseUrl }}</p>
+
+<div class="js-result"></div>
+<script language="JavaScript">
+    var baseUrl = "{{ app.request.schemeAndHttpHost ~ app.request.baseUrl }}";
+
+    $.getJSON( baseUrl + "/lucky/json", function( data ) {
+        console.log("data: %o", data);
+        $(".js-result").append("<h1>" + data.username + "</h1>")
+    });
+</script>
+{% endblock %}

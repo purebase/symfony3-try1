@@ -39,4 +39,14 @@ class LuckyController extends Controller
             'search' => $request_search
         ));
     }
+
+    /**
+     * @Route(
+     *     "/lucky/json"
+     * )
+     */
+    public function getAJsonString() {
+        return $this->json(array('username' => 'jane.doe'));
+    }
+
 }
