@@ -1,7 +1,7 @@
 {
-  "name": "dm-responsive",
+  "name": "symfony3-try1",
   "version": "0.1.0",
-  "description": "The responsive prototype of dm.de",
+  "description": "",
   "main": "build/server.js",
   "scripts": {
     "install": "gulp build",
