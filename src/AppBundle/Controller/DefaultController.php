@@ -10,6 +10,7 @@ use AppBundle\Entity\Task;
 use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Symfony\Component\Form\Extension\Core\Type\DateType;
 use Symfony\Component\Form\Extension\Core\Type\SubmitType;
+use Symfony\Component\HttpFoundation\JsonResponse;
 
 class DefaultController extends Controller
 {
@@ -36,26 +37,28 @@ class DefaultController extends Controller
         $form = $this->createFormBuilder($task)
             ->add('task', TextType::class)
             ->add('dueDate', DateType::class)
-            ->add('save', SubmitType::class, array('label' => 'Create Task'))
+//            ->add('save', SubmitType::class, array('label' => 'Create Task'))
             ->getForm();
 
-        $form->handleRequest($request);
+        $form->handleRequest($request);// or use ->bind() ?
 
-        if ($form->isSubmitted() && $form->isValid()) {
-            // $form->getData() holds the submitted values
-            // but, the original `$task` variable has also been updated
-            $task = $form->getData();
+        //if ( $request->isMethod( 'POST' ) ) {
+            if ($form->isSubmitted() && $form->isValid()) {
+                // $form->getData() holds the submitted values
+                // but, the original `$task` variable has also been updated
+                $task = $form->getData();
 
-            // ... perform some action, such as saving the task to the database
-            // for example, if Task is a Doctrine entity, save it!
-            // $em = $this->getDoctrine()->getManager();
-            // $em->persist($task);
-            // $em->flush();
+                // ... perform some action, such as saving the task to the database
+                // for example, if Task is a Doctrine entity, save it!
+                // $em = $this->getDoctrine()->getManager();
+                // $em->persist($task);
+                // $em->flush();
 
-            return new JsonResponse(array('message' => 'Success!'), 200);
-            return new JsonResponse(array('message' => 'Success!'), 200);
-            //return $this->redirectToRoute('task_success');
-        }
+                // return new JsonResponse(array('message' => 'Success!'), 200);
+                return new JsonResponse(array('message' => 'Success!'), 200);
+                //return $this->redirectToRoute('task_success');
+            }
+        //}
 
         return $this->render('default/new.html.twig', array(
             'form' => $form->createView(),

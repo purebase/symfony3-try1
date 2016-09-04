@@ -1,3 +1,44 @@
-{{ form_start(form) }}
-{{ form_widget(form) }}
-{{ form_end(form) }}
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <form id="form1">
+        {{ form_widget(form) }}
+        <p>
+            <button type="submit">Create</button>
+        </p>
+    </form>
+
+    <div class="js-result"></div>
+    <script language="JavaScript">
+        function postForm( $form, callback ){
+
+            var formValues = {};
+            $.each( $form.serializeArray(), function(i, field) {
+                formValues[field.name] = field.value;
+            });
+
+            $.ajax({
+                type        : "post",
+                url         : "{{ path('new_tasks') }}",
+                data        : formValues,
+                success     : function(data) {
+                    callback( data );
+                }
+            });
+        }
+
+        $(document).ready(function(){
+
+            $("#form1").submit( function( e ){
+                e.preventDefault();
+
+                postForm( $(this), function( response ){
+                    console.log("response %o", response)
+                });
+
+                return false;
+            });
+
+        });
+    </script>
+{% endblock %}
