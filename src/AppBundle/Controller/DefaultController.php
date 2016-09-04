@@ -30,10 +30,8 @@ class DefaultController extends Controller
      */
     public function newAction(Request $request)
     {
-        // create a task and give it some dummy data for this example
+        // just setup a fresh $task object (remove the dummy data)
         $task = new Task();
-        $task->setTask('Write a blog post');
-        $task->setDueDate(new \DateTime('tomorrow'));
 
         $form = $this->createFormBuilder($task)
             ->add('task', TextType::class)
@@ -41,9 +39,34 @@ class DefaultController extends Controller
             ->add('save', SubmitType::class, array('label' => 'Create Task'))
             ->getForm();
 
+        $form->handleRequest($request);
+
+        if ($form->isSubmitted() && $form->isValid()) {
+            // $form->getData() holds the submitted values
+            // but, the original `$task` variable has also been updated
+            $task = $form->getData();
+
+            // ... perform some action, such as saving the task to the database
+            // for example, if Task is a Doctrine entity, save it!
+            // $em = $this->getDoctrine()->getManager();
+            // $em->persist($task);
+            // $em->flush();
+
+            return new JsonResponse(array('message' => 'Success!'), 200);
+            return new JsonResponse(array('message' => 'Success!'), 200);
+            //return $this->redirectToRoute('task_success');
+        }
+
         return $this->render('default/new.html.twig', array(
             'form' => $form->createView(),
         ));
+    }
+
+    /**
+     * @Route("/tasks/success", name="task_success")
+     */
+    public function sucessAction() {
+        return $this->json(array('sucess' => 'true'));
     }
 
 }
