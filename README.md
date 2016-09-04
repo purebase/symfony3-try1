@@ -1,15 +1,42 @@
 TAGEBUCH
 ======
 
-NEXT:
-Upload und form ...
-http://symfony.com/doc/current/controller/upload_file.html
+NOTES
+-----   
+    * List of Bundles: http://knpbundles.com/
+        * OAuth1+2: http://knpbundles.com/hwi/HWIOAuthBundle
 
+ERRORS
+------
+Der Eintrag ...
+    mongodb_server: "mongodb://localhost:27017"
+... wurde manuell gesetzt (http://symfony.com/doc/current/bundles/DoctrineMongoDBBundle/index.html)
+Bei einer Composer-Console-Aktion wie z.B. ...
+    composer require symfony/debug
+... wurde es aber wieder entfernt.
 
+TODO
+-----
+* Upload und form: http://symfony.com/doc/current/controller/upload_file.html
+* Testing: http://symfony.com/doc/current/testing.html
+* Continious Deployment:
+    * https://www.theodo.fr/blog/2014/03/easy-travis-configuration-for-your-symfony2-tests-using-mysql-database/
+    * http://vvv.tobiassjosten.net/symfony/continuous-integration-for-your-symfony2-app/
+    * mit gulp: https://gomakethings.com/github-travis-ci-and-continuous-integration/
+    * https://cesiumjs.org/2016/02/03/Cesium-Website-Continuous-Integration/
 
+03.09.2016
+----------
+Das Debugging wird in Symfony so beschrieben ...
+http://symfony.com/doc/current/components/debug.html
+... verwendet man PhpStorm so unterscheidet sich das Debugging nicht von anderen 
+PHP-Anwendungen. Eines ist allerdings zu beachten:
+Durch den Start der Symfony-Applikation über die Konsole per ...
+    php bin\console server:run
+... ist die geladene Php.ini-Datei eine andere ....
+http://stackoverflow.com/questions/36669259/symfony3-debugging-with-phpstorm?noredirect=1&lq=1
 
-
-Die dynamische Erstellung Erstellung von Forms wird in dem Tutorial ...
+Die dynamische Erstellung von Forms wird in dem Tutorial ...
 http://symfony.com/doc/current/bundles/DoctrineMongoDBBundle/form.html
 ... in Bezug auf den Type scheinbar falsch erklärt, denn sowohl ...
 http://stackoverflow.com/questions/34658833/hello-expected-argument-of-type-string-bundle-frontbundle-form-type-prestati
@@ -21,8 +48,7 @@ http://api.symfony.com/2.7/Symfony/Bundle/FrameworkBundle/Controller/Controller.
 
 TODO http://symfony.com/doc/current/bundles/DoctrineMongoDBBundle/config.html
 
-
-02. September 2016
+02.09.2016
 ------------------
 Beschreibung "Einbinden von MongoDB":
 * http://symfony.com/doc/current/bundles/DoctrineMongoDBBundle/index.html

@@ -13,4 +13,8 @@ AnnotationRegistry::registerLoader([$loader, 'loadClass']);
 use Doctrine\ODM\MongoDB\Mapping\Driver\AnnotationDriver;
 AnnotationDriver::registerAnnotationClasses();
 
+// Tehe offical Debug enabling isn't nescessary
+// use Symfony\Component\Debug\Debug;
+// Debug::enable();
+
 return $loader;
